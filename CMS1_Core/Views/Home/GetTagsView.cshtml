@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CMS1_Core.Models.tblTag>
+@using CMS1_Core.Helpers
+@{
+    string url = Constants.urlHost;
+}
+@foreach (var item in Model)
+{
+    string strLink = url + "tag/" + myCommon.FriendlyUrl(item.TagName) + "-" + item.Id + ".html";
+
+    <a href="@strLink" title="@item.TagName" class="badge badge-success">@item.TagName</a>
+
+}

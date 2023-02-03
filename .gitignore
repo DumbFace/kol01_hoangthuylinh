@@ -49,12 +49,12 @@ Thumbs.db
 *.wmv
 
 /.vs
-KOL_HoangThuyLinh/.vs
-KOL_HoangThuyLinh/packages
-KOL_HoangThuyLinh/KOL_HoangThuyLinh/bin
-KOL_HoangThuyLinh/KOL_HoangThuyLinh/obj
-KOL_HoangThuyLinh/KOL_HoangThuyLinh/obj/Debug
-KOL_HoangThuyLinh/packages
-KOL_HoangThuyLinh/KOL_HoangThuyLinh/obj/Debug/
-KOL_HoangThuyLinh/KOL_HoangThuyLinh/assets
-KOL_HoangThuyLinh/KOL_HoangThuyLinh/uploads
+CMS1_Core/.vs
+CMS1_Core/packages
+CMS1_Core/bin
+CMS1_Core/obj
+CMS1_Core/obj/Debug
+CMS1_Core/packages
+CMS1_Core/obj/Debug/
+CMS1_Core/assets
+CMS1_Core/uploads

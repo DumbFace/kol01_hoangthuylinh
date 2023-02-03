@@ -1,0 +1,71 @@
+﻿@using CMS1_Core.Models
+@using CMS1_Core.Helpers
+@using cloudscribe.Pagination.Models
+@using cloudscribe.Web.Pagination
+
+@model PagedResult<tblNews>
+
+
+<div class="table-responsive">
+    <table class="table table-striped jambo_table bulk_action">
+        <thead class="headings">
+            <tr style="padding: 5px">
+                <th class="column-title w30">Id</th>
+                <th class="column-title">Tiêu đề</th>
+                <th class="column-title w150">Thumb</th>
+                <th class="column-title w150"></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Data)
+        {
+            string url = Constants.urlHost + item.UrlLink + "-" + item.Id + ".html";
+            string urlFB = Constants.urlHost + "admincp/Rss/InstantArticle?id=" + item.Id;
+            <tr>
+                <td id="@item.Id">@item.Id</td>
+                <td>
+                    <span class="badge badge-info">Tiêu đề</span>: @item.Title<br />
+                    <span class="badge badge-success">Link</span>:
+                    <a asp-controller="read" asp-action="index" target="_blank">@url</a>
+                    <br />Ngày xuất bản: @item.PublishDate.ToString("dd/MM/yyyy HH:mm")
+                    <br /> <span>Tags</span>:
+                    @{
+                        if (item.Tags.Count > 0)
+                        {
+                            foreach (var tag in item.Tags)
+                            {
+                                <span class="badge badge-primary">@tag.TagName</span>
+                            }
+                        }
+                    }
+                    <br />Lượr view: @item.ViewCount
+                    <br />FB Article:
+                    <a asp-area="Admincp" asp-controller="Rss" asp-action="InstantArticle" asp-route-id="@item.Id" target="_blank">
+                        @urlFB
+                    </a>
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Avatar))
+                    {
+                        <img src="@item.Avatar" width="200"
+                    onerror="this.onerror=null; this.src='/content/images/no-image.jpg'" />
+                    }
+                </td>
+                <td class="text-right dvAction">
+                    <a href='@Url.Action("Update","Content", new { Id = item.Id })' title="Hiệu chỉnh bài"
+                    target="_blank"><i class="fa fa-edit"></i></a>
+                    <a href="#" title="Xóa bài" onclick="deletecontent(@item.Id)"><i class="fa fa-remove"></i></a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+
+<div>
+    <cs-pager cs-paging-pagesize="Model.PageSize" cs-paging-pagenumber="Model.PageNumber + 1"
+        cs-paging-totalitems="Model.TotalItems" cs-pagenumber-param="page" cs-ajax-target="#dvList"
+        asp-controller="Content" asp-action="GetListActive" asp-route-key="@ViewBag.key"
+        asp-route-fromdate="@ViewBag.fromdate" asp-route-todate="@ViewBag.todate" asp-route-idzone="@ViewBag.idzone"
+        asp-route-pagesize="Model.PageSize">
+    </cs-pager>
+</div>
