@@ -1,0 +1,51 @@
+﻿@using MvcPaging;
+@using KOL_HoangThuyLinh.Models
+@model IPagedList<tblHome>
+@using System.Web.Configuration;
+@{
+    string url = WebConfigurationManager.AppSettings["UrlHost"];
+}
+@foreach (tblHome tbl in Model)
+{
+    string urlLink = url + tbl.UrlLink + "-" + tbl.Id + ".html";
+
+    <div class="col-sm-3 mb-2">
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="@urlLink" rel="noopener noreferrer">
+                    <figure class="figure">
+                        <img src="@tbl.Avatar2x1" class="figure-img img-fluid" alt="">
+                        <div class="icon-youtube">
+                            <img src="~/Content/Images/youtube-circle.png" alt="">
+                        </div>
+                    </figure>
+                </a>
+            </div>
+            <div class="col-sm-12">
+                <div class="row-video-title">
+                    <div class="th-posttitle mini">
+                        <h2>
+                            <a href="@urlLink" rel="noopener noreferrer">
+                                @tbl.Title
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="clearfix"></div>
+
+@if (Model.PageCount > 1)
+{
+    <div class="paging">
+        @Html.Pager(Model.PageSize, Model.PageIndex + 1, Model.TotalItemCount, new AjaxOptions() { UpdateTargetId = "dvList" }).Options(o => o
+           .RouteValues(new { clickPaging = true, ViewBag.Id })
+          .DisplayTemplate("Bootstrap4Pagination")
+         .MaxNrOfPages(5)
+        )
+    </div>
+}

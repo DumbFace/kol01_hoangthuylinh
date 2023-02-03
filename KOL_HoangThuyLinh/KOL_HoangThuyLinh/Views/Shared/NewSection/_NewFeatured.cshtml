@@ -1,0 +1,221 @@
+﻿
+@model List<KOL_HoangThuyLinh.Models.tblHome>
+@using System.Web.Configuration;
+@using KOL_HoangThuyLinh.Models;
+@{
+    string url = WebConfigurationManager.AppSettings["UrlHost"];
+    string strLink = "";
+    string strImg = "";
+}
+
+
+<div class="news-feature-title text-center ">
+    <p>TIN NỔI BẬT</p>
+</div>
+<div class="row row-news mb-sm-15 d-sm-flex d-none row-news-desktop">
+    <div class="col-sm-3 row-left">
+        @if (Model.Count > 0)
+        {
+            strLink = url + Model[0].UrlLink + "-" + Model[0].Id + ".html";
+            strImg = url + "/uploads/" + Model[0].Avatar1x2;
+            <a href="@strLink">
+                <div class="card h-sm-100">
+                    <img src="@strImg" class="card-img h-sm-100" alt="@Model[0].Title">
+                    <div class="card-img-overlay w-100 h-40">
+                        <h5 class="card-title mb-0">
+                            @Model[0].Title
+                        </h5>
+                        <br>
+                        <p class="teaser line-clamp-md">@Model[0].Teaser</p>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+    <div class="col-sm-9 row-right">
+        <div class="row row-right-top mb-sm-15">
+            <div class="col-sm-4 row-right-top-left">
+                @if (Model.Count > 1)
+                {
+                    strLink = url + Model[1].UrlLink + "-" + Model[1].Id + ".html";
+                    strImg = url + "/uploads/" + Model[1].Avatar1x1;
+                    <a href="@strLink">
+                        <div class="card h-sm-100 justify-content-end">
+                            <img src="@strImg" class="card-img h-sm-100"
+                                 alt="@Model[1].Title">
+                            <div class="card-img-overlay h-40 w-100">
+                                <h5 class="card-title">
+                                    @Model[1].Teaser
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+            <div class="col-sm-8 row-right-top-right">
+                @if (Model.Count > 2)
+                {
+                    strLink = url + Model[2].UrlLink + "-" + Model[2].Id + ".html";
+                    strImg = url + "/uploads/" + Model[2].Avatar2x1;
+                    <a href="@strLink">
+                        <div class="card justify-content-end">
+                            <img src="@strImg" class="card-img" alt="@Model[2].Title">
+                            <div class="card-img-overlay w-55 h-40">
+                                <h5 class="card-title">
+                                    @Model[2].Title
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+        <div class="row row-right-bottom">
+            <div class="col-sm-8 row-right-bottom-left">
+                @if (Model.Count > 3)
+                {
+                    strLink = url + Model[3].UrlLink + "-" + Model[3].Id + ".html";
+                    strImg = url + "/uploads/" + Model[3].Avatar2x1;
+                    <a href="@strLink">
+                        <div class="card justify-content-end">
+                            <img src="@strImg" class="card-img" alt="@Model[3].Title">
+                            <div class="card-img-overlay w-55 h-40">
+                                <h5 class="card-title">
+                                    @Model[3].Teaser
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+            <div class="col-sm-4 row-right-bottom-right">
+                @if (Model.Count > 4)
+                {
+                    strLink = url + Model[4].UrlLink + "-" + Model[4].Id + ".html";
+                    strImg = url + "/uploads/" + Model[4].Avatar1x1;
+                    <a href="@strLink">
+                        <div class="card h-sm-100 justify-content-end">
+                            <img src="@strImg" class="card-img h-sm-100"
+                                 alt="@Model[4].Title">
+                            <div class="card-img-overlay h-40 w-100">
+                                <h5 class="card-title">
+                                    @Model[4].Title
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-news mb-sm-15 d-sm-none d-flex row-news-mobile">
+    <div class="col-12 mb-15">
+        <div class="row">
+            <div class="col-6 row-left">
+                @if (Model.Count > 0)
+                {
+                    strLink = url + Model[0].UrlLink + "-" + Model[0].Id + ".html";
+                    strImg = url + "/uploads/" + Model[0].Avatar1x2;
+                    <a href="@strLink">
+                        <div class="card h-100">
+                            <img src="@strImg" class="card-img h-100" alt="@Model[0].Title">
+                            <div class="card-img-overlay w-100 h-50">
+                                <h5 class="card-title mb-0">
+                                    @Model[0].Title
+                                </h5>
+                                <br>
+                                <p class="teaser line-clamp-md">
+                                    @Model[0].Teaser
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+            <div class="col-6 row-right">
+                <div class="row">
+                    <div class="col-12 mb-15">
+                        @if (Model.Count > 1)
+                        {
+                            strLink = url + Model[1].UrlLink + "-" + Model[1].Id + ".html";
+                            strImg = url + "/uploads/" + Model[1].Avatar1x1;
+                            <a href="@strLink">
+                                <div class="card h-100 justify-content-end">
+                                    <img src="@strImg" class="card-img h-100"
+                                         alt="@Model[1].Title">
+                                    <div class="card-img-overlay w-100 h-50">
+                                        <h5 class="card-title">
+                                            @Model[1].Title
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+
+                    </div>
+                    <div class="col-12">
+                        @if (Model.Count > 4)
+                        {
+                            strLink = url + Model[4].UrlLink + "-" + Model[4].Id + ".html";
+                            strImg = url + "/uploads/" + Model[4].Avatar1x1;
+                            <a href="@strLink">
+                                <div class="card h-100 justify-content-end">
+                                    <img src="@strImg" class="card-img h-100"
+                                         alt="@Model[4].Title">
+                                    <div class="card-img-overlay w-100 h-50">
+                                        <h5 class="card-title">
+                                            @Model[4].Title
+                                        </h5>
+                                    </div>
+                                </div>
+
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12 mb-15">
+                @if (Model.Count > 2)
+                {
+                    strLink = url + Model[2].UrlLink + "-" + Model[2].Id + ".html";
+                    strImg = url + "/uploads/" + Model[2].Avatar2x1;
+                    <a href="@strLink">
+                        <div class="card justify-content-end">
+                            <img src="@strImg" class="card-img" alt="@Model[2].Title">
+                            <div class="card-img-overlay w-60 h-50">
+                                <h5 class="card-title">
+                                    @Model[2].Title
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+            <div class="col-12 mb-15">
+                @if (Model.Count > 3)
+                {
+                    strLink = url + Model[3].UrlLink + "-" + Model[3].Id + ".html";
+                    strImg = url + "/uploads/" + Model[3].Avatar2x1;
+                    <a href="@strLink">
+                        <div class="card justify-content-end">
+                            <img src="@strImg" class="card-img" alt="@Model[3].Title">
+                            <div class="card-img-overlay w-60 h-50">
+                                <h5 class="card-title">
+                                    @Model[3].Title
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-50 m-sm-auto loading-more my-3">
+    <a href="/bai-viet-1c">LOADMORE...</a>
+</div>

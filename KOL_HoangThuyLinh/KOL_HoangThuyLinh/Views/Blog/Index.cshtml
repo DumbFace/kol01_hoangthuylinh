@@ -1,0 +1,41 @@
+﻿
+@using KOL_HoangThuyLinh.Models
+@using System.Web.Configuration;
+
+@model  tblTag
+
+<div class="container">
+    <h1 class="breadcrumb">
+        <a href="#" title="Blog">
+            Blog
+        </a>
+    </h1>
+    <div class="row">
+        <div class="col-md-8 col-sm-12 col-xs-12">
+            <div class="th-single-detailv5" id="dvList">
+
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            @{Html.RenderAction("GetLatesNews", "Home"); }
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadData();
+        });
+
+        function LoadData() {
+            $.ajax({
+                url: "@Url.Action("GetList", "Blog")",
+                type: "POST",
+                success: function (msg) {
+                    $("#dvList").html(msg);
+                }
+            })
+        }
+    </script>
+}

@@ -1,0 +1,88 @@
+﻿@using KOL_HoangThuyLinh.Models
+@using System.Web.Configuration;
+@{
+    string url = WebConfigurationManager.AppSettings["UrlHost"];
+    string strPlacement = WebConfigurationManager.AppSettings["PlacementFB"];
+    Layout = null;
+}
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>@WebConfigurationManager.AppSettings["WebTitle"];</title>
+        <link>@url</link>
+        <description>@WebConfigurationManager.AppSettings["WebDescription"]</description>
+        <language>vi-vn</language>
+        <lastbuilddate>@(DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"))</lastbuilddate>
+
+        @{
+            myfunc func = new myfunc();
+            var lst = func.GetNewsRss();
+
+            foreach (tblHome tbl in lst)
+            {
+                string strLink = url + tbl.UrlLink + "-" + tbl.Id + ".html";
+                string strImg = Url.Content("~/uploads/") + tbl.Avatar;
+                string strBody = myCommon.GetContentRss(tbl.Body, tbl.Id);
+
+                List<tblHome> lstRelated = func.GetRelatedNews(tbl.IdZone, tbl.Id);
+
+                <item>
+                    <title>@tbl.Title</title>
+                    @(Html.Raw("<link>" + strLink + "</link>"))
+                    <guid>@tbl.Id</guid>
+                    <pubdate>@String.Format("{0:R}", tbl.PublishDate)</pubdate>
+                    <author>@tbl.UserName</author>
+                    <description>@tbl.Teaser</description>
+                    <content:encoded>
+                        <![CDATA[
+                        <!doctype HTML>
+                        <html lang="en" prefix="op: http://media.facebook.com/op#">
+                        <head>
+                            <meta charset="utf-8">
+                            <link rel="canonical" href="@strLink">
+                            <meta property="fb:use_automatic_ad_placement" content="enable=true ad_density=default">
+                            <meta property="op:markup_version" content="v1.0">
+                        </head>
+
+                        <body>
+                            <article>
+                                <header>
+                                    <figure class="op-ad">
+                                        <iframe src="https://www.facebook.com/adnw_request?placement=@strPlacement&amp;adtype=banner300x250" height="300" width="250"></iframe>
+                                    </figure>
+                                    <h1>@tbl.Title</h1>
+                                    <h2 class="op-kicker">@tbl.CategoryName</h2>
+                                    <time class="op-published" datetime="@tbl.PublishDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK")+07:00">@tbl.PublishDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK")+07:00</time>
+                                    <time class="op-modified" datetime="@tbl.UpdateDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK")+07:00">@tbl.UpdateDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK")+07:00</time>
+                                    <address>@tbl.UserName</address>
+                                </header>
+                                <p><strong>@tbl.Teaser</strong></p>
+                                @Html.Raw(tbl.Body)
+                                @{
+                                    if (lstRelated.Count > 0)
+                                    {
+                                        <h1>Cùng nội dung</h1>
+                                        <ul class="op-related-articles">
+                                            @foreach (var item in lstRelated)
+                                            {
+                                                string urlRelated = url + "/" + item.UrlLink + "-" + item.Id + ".html";
+                                                <li><a href="@urlRelated">@item.Title</a></li>
+                                            }
+                                        </ul>
+                                    }
+                                }
+                                <figure class="op-tracker">
+                                    <iframe width="1" height="1" style="border:0; margin:0;" src="@string.Format("https://www.dienanh.net/fbia/{0}",tbl.Id)"></iframe>
+                                </figure>
+                                <footer>
+                                    <small>Giấy phép thiết lập mạng xã hội trên mạng số 123/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 23/3/2017</small>
+                                </footer>
+                            </article>
+                        </body>
+                    </html>
+                    ]]>
+                </content:encoded>
+            </item>
+        }
+        }
+    </channel>
+</rss>

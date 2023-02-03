@@ -1,0 +1,250 @@
+﻿@model List<tblHome>
+@using System.Web.Configuration;
+@using webCMS4_NT.Models;
+@{
+    string url = WebConfigurationManager.AppSettings["UrlHost"];
+}
+@if (Model != null && Model.Count != 0)
+{
+    string strLink = "";
+    string strImg = "";
+    tblHome tblNews = new tblHome();
+    <div class="row row-social">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            if (i == 0)
+            {
+                tblNews = Model[0];
+                strLink = url + tblNews.UrlLink + "-" + tblNews.Id + ".html";
+                strImg = url + "/uploads/" + tblNews.Avatar1x1;
+            }
+        }
+        <div class="col-sm-6 row-left">
+            <div class="card">
+                <a href="@strLink">
+                    <img src="@strImg" class="card-img"
+                         alt="@tblNews.Title"
+                         onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                </a>
+                <div class="card-img-overlay row-title">
+                    <a href="#">
+                        <h5 class="card-title">@tblNews.Title</h5>
+                        <hr class="title">
+                        <p class="teaser">
+                            @tblNews.Teaser
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 row-right">
+            <div class="row row-right-top">
+                @{
+                    if (Model.Count > 1 && Model.Count >= 5)
+                    {
+                        for (int i = 2; i <= 5; i++)
+                        {
+                            strLink = url + Model[i].UrlLink + "-" + Model[i].Id + ".html";
+                            strImg = url + "/uploads/" + Model[i].Avatar1x1;
+                            <div class="col-sm-6 mb-sm-30">
+                                <div class="card text-white">
+                                    <a href="@strLink">
+                                        <img src="@strImg" class="card-img"
+                                             alt="@tblNews.Title"
+                                             onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                    </a>
+                                    <div class="card-img-overlay">
+                                        <a href="@strLink">
+                                            @if (i == 1)
+                                            {
+                                                <img src="~/Content/Images/facebook.png" class="card-img"
+                                                     alt="@tblNews.Title"
+                                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                            }
+                                            else if (i == 2)
+                                            {
+                                                <img src="~/Content/Images/instagram.png" class="card-img"
+                                                     alt="@tblNews.Title"
+                                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                            }
+                                            else if (i == 3)
+                                            {
+                                                <img src="~/Content/Images/tiktok.png" class="card-img"
+                                                     alt="@tblNews.Title"
+                                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                            }
+                                            else
+                                            {
+                                                <img src="~/Content/Images/youtube.png" class="card-img"
+                                                     alt="@tblNews.Title"
+                                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                            }
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 2; i <= Model.Count; i++)
+                        {
+                            strLink = url + Model[i].UrlLink + "-" + Model[i].Id + ".html";
+                            strImg = url + "/uploads/" + Model[i].Avatar1x1;
+                            <div class="col-sm-6 mb-sm-30">
+                                <div class="card text-white">
+                                    <a href="@strLink">
+                                        <img src="@strImg" class="card-img"
+                                             alt="@tblNews.Title"
+                                             onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                    </a>
+                                    <div class="card-img-overlay">
+                                        <a href="@strLink">
+                                            @if (i == 1)
+                                            {
+                                                <img src="~/Content/Images/facebook.png" class="card-img"
+                                                     alt="@tblNews.Title"
+                                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                            }
+                                            else if (i == 2)
+                                            {
+                                                <img src="~/Content/Images/instagram.png" class="card-img"
+                                                     alt="@tblNews.Title"
+                                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                            }
+                                            else if (i == 3)
+                                            {
+                                                <img src="~/Content/Images/tiktok.png" class="card-img"
+                                                     alt="@tblNews.Title"
+                                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                            }
+                                            else
+                                            {
+                                                <img src="~/Content/Images/youtube.png" class="card-img"
+                                                     alt="@tblNews.Title"
+                                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                            }
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    if (Model.Count > 5)
+    {
+        <div class="row row-news mb-sm-30">
+            @if (Model[5] != null)
+            {
+                strLink = url + Model[5].UrlLink + "-" + Model[5].Id + ".html";
+                strImg = url + "/uploads/" + Model[5].Avatar1x2;
+                <div class="col-sm-3 row-left">
+                    <div class="card h-sm-100">
+                        <a href="@strLink" class="h-100">
+                            <img src="@strImg" class="card-img h-sm-100"
+                                 alt="@tblNews.Title"
+                                 onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                        </a>
+                        <a href="@strLink">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title mb-0">
+                                    @tblNews.Title
+                                </h5>
+                                <br>
+                                <p class="teaser line-clamp-md">
+                                    @tblNews.Teaser
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+
+            <div class="col-sm-9 row-right">
+                <div class="row row-right-top mb-sm-30">
+                    <div class="col-sm-4">
+                        <a href="/bai-viet-1c">
+                            <div class="card bg-dark h-sm-100 justify-content-center">
+                                <div class="card-img-overlay row-title">
+                                    <h5 class="card-title">NEWS</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @if (Model.Count > 6)
+                    {
+                        strLink = url + Model[6].UrlLink + "-" + Model[6].Id + ".html";
+                        strImg = url + "/uploads/" + Model[6].Avatar2x1;
+                        <div class="col-sm-8">
+                            <div class="card justify-content-end">
+                                <a href="@strLink">
+                                    <img src="@strImg" class="card-img"
+                                         alt="@tblNews.Title"
+                                         onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                </a>
+                                <div class="card-img-overlay w-50">
+                                    <a href="@strLink">
+                                        <p class="teaser">
+                                            @tblNews.Teaser
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <div class="row row-right-bottom">
+                    @if (Model.Count > 7)
+                    {
+                        strLink = url + Model[7].UrlLink + "-" + Model[7].Id + ".html";
+                        strImg = url + "/uploads/" + Model[7].Avatar2x1;
+                        <div class="col-sm-8">
+                            <div class="card justify-content-end">
+                                <a href="@strLink">
+                                    <img src="@strImg" class="card-img"
+                                         alt="@tblNews.Title"
+                                         onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                </a>
+                                <div class="card-img-overlay w-50">
+                                    <a href="@strLink">
+                                        <p class="teaser">
+                                            @tblNews.Teaser
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    @if (Model.Count > 8)
+                    {
+                        <div class="col-sm-4">
+                            @{
+                                strLink = url + Model[8].UrlLink + "-" + Model[8].Id + ".html";
+                                strImg = url + "/uploads/" + Model[8].Avatar1x1;
+                            }
+                            <div class="card h-sm-100 justify-content-end">
+                                <a href="@strLink" class="h-100">
+                                    <img src="@strImg" class="card-img h-sm-100"
+                                         alt="@tblNews.Title"
+                                         onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                </a>
+                                <div class="card-img-overlay">
+                                    <a href="@strLink">
+                                        <p class="teaser">
+                                            @tblNews.Teaser
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    }
+}

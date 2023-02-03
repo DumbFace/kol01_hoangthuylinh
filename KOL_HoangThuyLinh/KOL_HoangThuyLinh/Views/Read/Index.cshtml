@@ -1,0 +1,143 @@
+﻿@using KOL_HoangThuyLinh.Models
+@using System.Web.Configuration;
+@model  tblNews
+
+@{
+    string url = WebConfigurationManager.AppSettings["UrlHost"];
+    string strLink = url + Model.UrlLink + "-" + Model.Id + ".html";
+    string strImg = Model.Avatar2x1;
+}
+
+<script type="application/ld+json">
+    {
+    "@@context": "https://schema.org",
+    "@@type": "NewsArticle",
+    "mainEntityOfPage":    [    {    "@@type":"WebPage",    "@@id":"@strLink"    }    ],
+    "description": "@Model.Teaser",
+    "headline": "@Model.Title",
+    "datePublished": "@Model.PublishDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK")",
+    "dateModified": "@Model.PublishDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK")",
+    "author": {
+        "@@type": "Person",
+        "name": "@Model.UserName"
+    },
+    "publisher": {
+    "@@type": "Organization",
+    "name": "Tin sao Hàn",
+    "logo": {
+        "@@type": "ImageObject",
+        "url": "https://tinsaohan.com/Content/Images/logohome.jpg"
+    }
+    },
+    "image": {
+        "@@type": "ImageObject",
+        "url": "@strImg"
+        }
+    }
+</script>
+
+<div id="dvDetail" class="margin-top-content">
+    <div class="container">
+        <div class="tag-title" style="display:none">
+            <p>#Nguyenvietphuongthoa</p>
+        </div>
+        <div class="th-posttitle th-posttitle-border">
+            <h1>@Model.Title</h1>
+            <ul class="th-postmatadata pt-3">
+                <li><a href="javascript:;">@Model.UserName</a></li>
+                <li>&nbsp; - &nbsp;</li>
+                <li><time>@Model.PublishDate.ToString("dd/MM/yyyy HH:mm")</time></li>
+            </ul>
+        </div>
+        <article class="th-themepost th-postdetail" data-title="@Model.Title">
+            @if (Model.IdType == 1)
+            {
+                <figure class="th-themepost-img">
+                    <img src="@strImg" alt="@Model.Title" title="@Model.Title" onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                </figure>
+            }
+            <a href="#">
+                <h5>@Model.CategoryName</h5>
+            </a>
+            <div class="th-description" id="dvContent">
+                @Html.Raw(Model.Body)
+            </div>
+        </article>
+        @if (Model.IdType == 1)
+        {
+            <div class="source-link text-start">
+                <span class="badge bg-secondary">Nguồn bài viết: </span>
+                <a href="@Model.UrlSource" rel="noreferrer noopener @(Model.SEONoFollow == true ? "nofollow":"")">@Model.UrlSource</a>
+            </div>
+        }
+        <div class="clearfix"></div>
+        <div class="th-relatedpost">
+            <div class="th-heading">
+                <h2>BÀI VIẾT LIÊN QUAN</h2>
+            </div>
+            <div id="th-relatedpost-slider" class="th-relatedpost-slider">
+                <div class="swiper-wrapper">
+                    @if (ViewBag.lstRelated != null)
+                    {
+                        foreach (tblHome obj in ViewBag.lstRelated)
+                        {
+                            string strLink1 = url + obj.UrlLink + "-" + obj.Id + ".html";
+
+
+                            <div class="swiper-slide">
+                                <article class="th-themepost">
+
+                                    <figure class="th-themepost-img">
+                                        <a href="@strLink1">
+                                            <img alt="@obj.Title" title="@obj.Title" width="100" class="img-fluid" src="@obj.Avatar2x1" onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                                        </a>
+                                    </figure>
+
+                                    <div class="th-posttitle mini">
+                                        <h2><a href="@strLink1">@obj.Title</a></h2>
+                                    </div>
+                                </article>
+                            </div>
+                        }
+                    }
+
+                </div>
+                <div class="swiper-button-prev"><img src="~/Content/Images/arrow-left.png" /></div>
+                <div class="swiper-button-next"><img src="~/Content/Images/arrow-right.png" /></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div id="th-postcomments" class="th-postcomments">
+            <div class="fb-comments" data-href="@strLink" data-width="100%" data-numposts="5"></div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        var swiper = new Swiper('#th-relatedpost-slider',
+            {
+                nextButton: ".th-rbtnslidernext",
+                prevButton: ".th-rbtnsliderprev",
+                slidesPerView: 3,
+                spaceBetween: 15,
+                autoplay: 2500,
+                breakpoints: {
+                    320: { slidesPerView: 1, spaceBetweenSlides: 10 },
+                    480: { slidesPerView: 1, spaceBetweenSlides: 20 },
+                    640: { slidesPerView: 2, spaceBetweenSlides: 30 },
+                    991: { slidesPerView: 3 }
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+
+    </script>
+}

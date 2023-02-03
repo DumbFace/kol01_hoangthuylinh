@@ -1,0 +1,38 @@
+﻿
+@model List<KOL_HoangThuyLinh.Models.tblHome>
+@using System.Web.Configuration;
+@using KOL_HoangThuyLinh.Models;
+@{
+    string url = WebConfigurationManager.AppSettings["UrlHost"];
+}
+
+
+<div class="news-category margin-top-content">
+    <div class="bg-news">
+
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row-news mb-sm-4 mb-2" id="dvList">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadData();
+        });
+
+        function LoadData() {
+            $.ajax({
+                url: "@Url.Action("GetList", "News")",
+                type: "POST",
+                success: function (msg) {
+                    $("#dvList").html(msg);
+                }
+            })
+        }
+    </script>
+}

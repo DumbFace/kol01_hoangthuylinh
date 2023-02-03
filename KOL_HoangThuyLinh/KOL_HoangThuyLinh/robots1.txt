@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admincp/
+
+sitemap: https://tinsaohan.com/sitemap.xml

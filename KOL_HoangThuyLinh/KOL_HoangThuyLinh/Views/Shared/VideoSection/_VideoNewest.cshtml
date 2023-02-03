@@ -1,0 +1,182 @@
+﻿
+@model List<KOL_HoangThuyLinh.Models.tblHome>
+@using System.Web.Configuration;
+@using KOL_HoangThuyLinh.Models;
+@{
+    string url = WebConfigurationManager.AppSettings["UrlHost"];
+    string strLink = "";
+    string strImg = "";
+}
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center new-video-title my-3">
+        <p>VIDEO MỚI NHẤT</p>
+    </div>
+    <div class="row new-video">
+        <div class="col-sm-6 col-12 row-left">
+            @if (Model.Count > 9)
+            {
+                strLink = url + Model[9].UrlLink + "-" + Model[9].Id + ".html";
+                strImg = url + "/uploads/" + Model[9].Avatar1x1;
+                <a href="@strLink">
+                    <div class="card justify-content-end mb-15">
+                        <img src="@strImg" class="card-img h-sm-100" alt="@Model[9].Title">
+                        <div class="card-img-overlay default-padding w-60 h-50">
+                            <h5 class="card-title mb-0">
+                                @Model[9].Title
+                            </h5>
+                            <br>
+                            <p class="teaser line-clamp-md">
+                                @Model[9].Teaser
+                            </p>
+                        </div>
+                        <div class="icon-youtube icon-big">
+                            <img src="~/Content/Images/youtube-circle.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+        <div class="col-sm-6 col-12 row-right">
+            <div class="row">
+                @if (Model.Count > 10 && Model.Count >= 14)
+                {
+                    for (int i = 10; i < 14; i++)
+                    {
+                        strLink = url + Model[i].UrlLink + "-" + Model[i].Id + ".html";
+                        strImg = url + "uploads/" + Model[i].Avatar1x1;
+                        <div class="col-sm-6 col-6 mb-15">
+                            <div class="card justify-content-end">
+                                <img src="@strImg" class="card-img h-sm-100" alt="@Model[i].Title">
+                                <div class="card-img-overlay w-100 h-45">
+                                    <h5 class="card-title mb-0">
+                                        @Model[i].Title
+                                    </h5>
+                                </div>
+                                <div class="icon-youtube">
+                                    <img src="~/Content/Images/youtube-circle.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    for (int i = 10; i < Model.Count; i++)
+                    {
+                        strLink = url + Model[i].UrlLink + "-" + Model[i].Id + ".html";
+                        strImg = url + "uploads/" + Model[i].Avatar1x1;
+                        <div class="col-sm-6 col-6 mb-15">
+                            <div class="card justify-content-end">
+                                <img src="@strImg" class="card-img h-sm-100" alt="@Model[i].Title">
+                                <div class="card-img-overlay w-100 h-45">
+                                    <h5 class="card-title mb-0">
+                                        @Model[i].Title
+                                    </h5>
+                                </div>
+                                <div class="icon-youtube">
+                                    <img src="~/Content/Images/youtube-circle.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row new-video-last mb-15">
+        @if (Model.Count > 14 && Model.Count >= 18)
+        {
+            for (int i = 14; i < 18; i++)
+            {
+                strLink = url + Model[i].UrlLink + "-" + Model[i].Id + ".html";
+                strImg = url + "uploads/" + Model[i].Avatar1x1;
+                if (i > 15)
+                {
+                    <div class="col-sm-3 d-none d-sm-block">
+                        <a href="@strLink">
+                            <div class="card justify-content-end">
+                                <img src="@strImg" class="card-img h-sm-100" alt="@Model[i].Title">
+                                <div class="card-img-overlay w-100 h-45">
+                                    <h5 class="card-title mb-0">
+                                        @Model[i].Title
+                                    </h5>
+                                </div>
+                                <div class="icon-youtube">
+                                    <img src="~/Content/Images/youtube-circle.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="col-sm-3 col-6">
+                        <a href="@strLink">
+                            <div class="card justify-content-end">
+                                <img src="@strImg" class="card-img h-sm-100" alt="@Model[i].Title">
+                                <div class="card-img-overlay w-100 h-45">
+                                    <h5 class="card-title mb-0">
+                                        @Model[i].Title
+                                    </h5>
+                                </div>
+                                <div class="icon-youtube">
+                                    <img src="~/Content/Images/youtube-circle.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        }
+        else
+        {
+            for (int i = 14; i < Model.Count; i++)
+            {
+                strLink = url + Model[i].UrlLink + "-" + Model[i].Id + ".html";
+                strImg = url + "uploads/" + Model[i].Avatar1x1;
+                if (i > 15)
+                {
+                    <div class="col-sm-3 d-none d-sm-block">
+                        <a href="@strLink">
+                            <div class="card justify-content-end">
+                                <img src="@strImg" class="card-img h-sm-100" alt="@Model[i].Title">
+                                <div class="card-img-overlay w-100 h-45">
+                                    <h5 class="card-title mb-0">
+                                        @Model[i].Title
+                                    </h5>
+                                </div>
+                                <div class="icon-youtube">
+                                    <img src="~/Content/Images/youtube-circle.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-sm-3 col-6">
+                        <a href="@strLink">
+                            <div class="card justify-content-end">
+                                <img src="@strImg" class="card-img h-sm-100" alt="@Model[i].Title">
+                                <div class="card-img-overlay w-100 h-45">
+                                    <h5 class="card-title mb-0">
+                                        @Model[i].Title
+                                    </h5>
+                                </div>
+                                <div class="icon-youtube">
+                                    <img src="~/Content/Images/youtube-circle.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        }
+    </div>
+    <div class="w-50 m-auto loading-more my-3">
+        <a href="/bai-viet-video-3c">LOADMORE...</a>
+    </div>
+</div>

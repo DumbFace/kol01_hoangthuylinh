@@ -1,0 +1,24 @@
+﻿
+@model KOL_HoangThuyLinh.Models.tblKOL
+
+<div class="profile" style="background-image: url(@Model.Avatar); width:100%; height: 710px;">
+    <div class="container">
+        <div class="profile-info">
+            <div class="profile-title">
+                <p>@Model.Title</p>
+            </div>
+            <div class="profile-description">
+                <p>
+                    @Html.Raw(Model.Body)
+                </p>
+            </div>
+            <div class="profile-readmore">
+                <a href="#" class="btn">
+                    Read More
+                </a>
+            </div>
+            <div class="seperator with-colored size-small"><span></span></div>
+        </div>
+    </div>
+</div>
+
