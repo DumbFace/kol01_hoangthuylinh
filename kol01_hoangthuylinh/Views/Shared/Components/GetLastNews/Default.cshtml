@@ -1,0 +1,41 @@
+@using kol01_hoangthuylinh.Helpers
+@model List<tblHome>
+    
+@{
+    string url = Constants.urlHost;
+}
+
+<div class="th-widget th-mostpopularpost">
+    <div class="th-widgettitle">
+        <h3>Tin đọc nhiều nhất</h3>
+    </div>
+    <ul>
+        @foreach (tblHome tbl in Model)
+        {
+            string strLink = url + tbl.UrlLink + "-" + tbl.Id + ".html";
+            <li>
+                <div class="row">
+                    <div class="col-4 col-md-5 col-xl-4 pr-0">
+                        <figure>
+                            <a href="@strLink" title="@tbl.Title">
+                                <img src="@tbl.Avatar2x1" alt="@tbl.Title" title="@tbl.Title" style="max-width:80px"
+                                     onerror="this.onerror=null; this.src='/content/images/no-image.jpg'">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="col-8 col-md-7 col-xl-8 pl-0">
+                        <div class="th-contentbox widget">
+                            <div class="th-posttitle mini">
+                                <h4 style="text-align:justify"><a href="@strLink" title="@tbl.Title">@tbl.Title</a></h4>
+                            </div>
+                            <ul class="th-postmatadata">
+                                <li><a href="javascript:;">@tbl.UserName</a></li>
+                                <li><time><a href="#">@tbl.PublishDate.ToString("dd/MM/yyyy HH:mm")</a></time></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

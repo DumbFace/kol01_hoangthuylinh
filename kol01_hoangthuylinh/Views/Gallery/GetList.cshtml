@@ -1,0 +1,43 @@
+﻿@using cloudscribe.Web.Pagination
+@using cloudscribe.Pagination.Models
+
+@using kol01_hoangthuylinh.Models
+@using kol01_hoangthuylinh.Helpers
+@model PagedResult<tblGallery>
+@{
+    string url = Constants.urlHost;
+}
+
+<div class="row">
+    @foreach (tblGallery tbl in Model.Data)
+    {
+        string strLink =
+        Url.Action("GalleryAlbum", "Gallery", new { url = myCommon.FriendlyUrl(tbl.Title), id = tbl.Id });
+        <div class="col-sm-6">
+            <div class="gallery-album">
+                <div class="gallery-album-title">
+                    <a href="@strLink" class="hash-tag">@tbl.Title</a>
+                </div>
+                <div class="gallery-albbum-image">
+                    <figure class="figure">
+                        <a href="@strLink">
+                            <img src='@Url.Content("~/uploads/" + @tbl.AvatarCover)' class="figure-img img-fluid" alt="">
+                        </a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="clearfix"></div>
+
+@if (Model.PageNumber > 1)
+{
+    <div>
+        <cs-pager cs-paging-pagesize="Model.PageSize" cs-paging-pagenumber="Model.PageNumber + 1"
+        cs-paging-totalitems="Model.TotalItems" cs-pagenumber-param="page" cs-ajax-target="#dvList"
+        asp-controller="Gallery" asp-action="GetList">
+        </cs-pager>
+    </div>
+}

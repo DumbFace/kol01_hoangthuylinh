@@ -1,0 +1,47 @@
+﻿@using kol01_hoangthuylinh.Models;
+@using kol01_hoangthuylinh.Helpers;
+@{
+    @* ViewBag.Title =  Constants.isRedisCachedEnable ? MyCacheFunc.GetConfigWeb().TitleWeb : new myfunc().GetConfigWeb().TitleWeb; *@
+}
+
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="topbar-left-content">
+                <div class="social-links">
+                    <a href="https://www.youtube.com/HoangThuyLinh1108"><i class="fa fa-youtube-play"></i></a>
+                    <a href="https://www.facebook.com/hoangthuylinh.singer"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/hoangthuylinhofficial/"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="d-flex">
+                <input id="txtKey" type="text" name="q" autocomplete="off" class="form-control"
+                       onkeypress="return runScript(event);">
+                <button class="btn form-search__submit" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Trang Chủ <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/bai-viet-video">VIDEOS <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/bai-viet">NEWS <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/bo-suu-tap" >GALLERY <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</header>

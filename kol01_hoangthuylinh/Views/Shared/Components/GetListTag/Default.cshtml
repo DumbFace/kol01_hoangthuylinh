@@ -1,0 +1,31 @@
+﻿@model IEnumerable<kol01_hoangthuylinh.Models.tblTag>
+@using kol01_hoangthuylinh.Helpers
+@{
+    string url = Constants.urlHost;
+}
+
+<div class="th-widget th-mostpopularpost">
+    <div class="th-widgettitle">
+        <h3>Tags</h3>
+    </div>
+    <ul class="tags">
+        @{
+            if (Model != null)
+            {
+                foreach (tblTag item in Model)
+                {
+                    string strLink = url + "tag/" + myCommon.FriendlyUrl(item.TagName) + "-" + item.Id + ".html";
+                    <li>
+                        <div class="th-contentbox widget">
+                            <ul class="th-postmatadata tag">
+                                <li><a href="@strLink" title="@item.TagName">@item.TagName</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                }
+            }
+        }
+
+    </ul>
+</div>
+

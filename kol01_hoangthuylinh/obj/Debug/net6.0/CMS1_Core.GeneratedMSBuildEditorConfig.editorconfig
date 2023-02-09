@@ -1,0 +1,232 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CMS1_Core
+build_property.RootNamespace = CMS1_Core
+build_property.ProjectDir = d:\WorkSpace\repo\Github\kol01_hoangthuylinh\kol01_hoangthuylinh\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = d:\WorkSpace\repo\Github\kol01_hoangthuylinh\kol01_hoangthuylinh
+build_property._RazorSourceGeneratorDebug = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/adhome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xhZGhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Admincp/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xBZG1pbmNwXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Category/AddCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDYXRlZ29yeVxBZGRDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Category/GetList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDYXRlZ29yeVxHZXRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDYXRlZ29yeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/ConfigWeb/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb25maWdXZWJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Content/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb250ZW50XEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Content/GetListActive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb250ZW50XEdldExpc3RBY3RpdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Content/GetListDelay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb250ZW50XEdldExpc3REZWxheS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Content/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb250ZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Content/ListActive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb250ZW50XExpc3RBY3RpdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Content/ListDelay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb250ZW50XExpc3REZWxheS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Content/ShowUrlImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb250ZW50XFNob3dVcmxJbWFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Content/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xDb250ZW50XFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/ManageUsers/AddUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xNYW5hZ2VVc2Vyc1xBZGRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/ManageUsers/GetListUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xNYW5hZ2VVc2Vyc1xHZXRMaXN0VXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/ManageUsers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xNYW5hZ2VVc2Vyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/ManageUsers/ResetPass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xNYW5hZ2VVc2Vyc1xSZXNldFBhc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/ManageUsers/ShowRoleUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xNYW5hZ2VVc2Vyc1xTaG93Um9sZVVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Rss/InstantArticle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xSc3NcSW5zdGFudEFydGljbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Shared/_modal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xTaGFyZWRcX21vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Sitemap/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xTaXRlbWFwXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Tags/AddTag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xUYWdzXEFkZFRhZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Tags/GetList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xUYWdzXEdldExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Tags/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xUYWdzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Zone/AddZone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xab25lXEFkZFpvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Zone/GetList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xab25lXEdldExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/Zone/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xab25lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Areas/admincp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5jcFxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Home/GetLatesNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRMYXRlc05ld3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Home/GetListNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRMaXN0TmV3cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Home/GetTagsHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRUYWdzSGVhZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Home/GetTagsView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRUYWdzVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Home/GetZonesHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRab25lc0hlYWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/MyAccount/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlBY2NvdW50XEFjY2Vzc0RlbmllZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/MyAccount/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlBY2NvdW50XENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/MyAccount/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlBY2NvdW50XExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/Components/GetLastNews/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0TGFzdE5ld3NcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/Components/GetListNews/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0TGlzdE5ld3NcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/Components/GetListTag/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0TGlzdFRhZ1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/Components/GetTagsHeader/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0VGFnc0hlYWRlclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/Components/GetTagsView/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0VGFnc1ZpZXdcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/Components/ucFooter/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdWNGb290ZXJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/Components/ucHeader/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdWNIZWFkZXJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Tag/GetList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXEdldExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/Tag/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/WorkSpace/repo/Github/kol01_hoangthuylinh/kol01_hoangthuylinh/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

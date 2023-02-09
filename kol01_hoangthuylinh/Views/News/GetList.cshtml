@@ -1,0 +1,50 @@
+﻿@using kol01_hoangthuylinh.Models
+@using cloudscribe.Pagination.Models
+@using cloudscribe.Web.Pagination
+@using kol01_hoangthuylinh.Helpers
+@model PagedResult<tblHome>
+@{
+    string url = Constants.urlHost;
+}
+
+<div class="row row-top-news">
+
+    @foreach (tblHome tbl in Model.Data)
+    {
+        string urlLink = url + tbl.UrlLink + "-" + tbl.Id + ".html";
+
+        <div class="col-sm-3 mb-2">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="@urlLink" rel="noopener noreferrer">
+                        <figure class="figure">
+                            <img src="@tbl.Avatar2x1" class="figure-img img-fluid">
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-sm-12">
+                    <div class="th-posttitle mini">
+                        <h2>
+                            <a href="@urlLink" rel="noopener noreferrer">
+                                    @tbl.Title
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+<div class="clearfix"></div>
+
+@if (Model.PageNumber > 1)
+{
+    <div>
+        <cs-pager cs-paging-pagesize="Model.PageSize" cs-paging-pagenumber="Model.PageNumber + 1"
+        cs-paging-totalitems="Model.TotalItems" cs-pagenumber-param="page" cs-ajax-target="#dvList"
+        asp-controller="News" asp-action="Index">
+        </cs-pager>
+    </div>
+}

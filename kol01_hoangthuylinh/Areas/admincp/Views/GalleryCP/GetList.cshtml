@@ -1,0 +1,42 @@
+﻿@using kol01_hoangthuylinh.Models
+@using kol01_hoangthuylinh.Helpers
+@using cloudscribe.Pagination.Models
+@using cloudscribe.Web.Pagination
+
+@model PagedResult<tblGallery>
+
+<div class="table-responsive">
+    <table class="table table-striped jambo_table bulk_action">
+        <thead class="headings">
+            <tr style="padding: 5px">
+                <th class="column-title">Bộ Sưu Tập</th>
+                <th class="column-title" style="width: 10%;">Ngày Tạo</th>
+                <th class="column-title" style="width: 30%">Avatar Cover</th>
+                <th class="column-title" style="width: 30%;"></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Data)
+        {
+            string url = kol01_hoangthuylinh.Helpers.Constants.urlHost;
+            string strImg = url + Url.Content("~/uploads/") + item.AvatarCover;
+            <tr>
+                <td id="@item.Id">@item.Title</td>
+                <td class="text-center">
+                    @item.CreateDate.ToString("dd/MM/yyyy HH:mm")
+                </td>
+                <td class="text-center">
+                    <img src="@strImg" style="width: 70%;" />
+                </td>
+
+                <td class="text-end dvAction">
+                    <a href="@Url.Action("GalleryDetail", new { id = item.Id })" class="btn btn-info"><i class="fa fa-pencil"></i> Danh sách hình ảnh</a>
+                    <button class="btn btn-info" onclick="AddGallery('@item.Id')"><i class="fa fa-pencil"></i> Sửa </button>
+                    <button class="btn btn-danger" onclick="DeleteGallery('@item.Id')"><i class="fa fa-remove"></i> Xoá </button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+
+

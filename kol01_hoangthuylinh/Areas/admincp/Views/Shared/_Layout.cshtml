@@ -1,0 +1,140 @@
+﻿@using kol01_hoangthuylinh
+@{
+    tblUser tbl = MyAuthorize.GetLoggedUser(Context);
+    int intRole = 2;
+    if (tbl != null)
+    {
+        intRole = tbl.IdRole;
+    }
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống quản lý web Sao Hàn</title>
+    <environment names="Development">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/custom.css">
+    </environment>
+    <environment names="Product">
+        <link rel="stylesheet" href="/css/sitecp.min.css">
+    </environment>
+
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/" class="site_title">
+                            <img src="~/Images/logohome.png" alt="..." class="img-fluid" width="200">
+                            <div>Web Sao Hàn</div>
+                        </a>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class='nav side-menu'>
+                                <li>
+                                    <a><i class='fa fa-folder'></i> Quản lý danh mục<span class='fa fa-chevron-down'></span></a>
+                                    <ul class='nav child_menu' style='display: none'>
+                                        <li><a href='@Url.Content("~/admincp/tags")'>Danh sách tag</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class='fa fa-folder'></i> Bài viết<span class='fa fa-chevron-down'></span></a>
+                                    <ul class='nav child_menu' style='display: none'>
+                                        <li><a href='@Url.Content("~/admincp/content/Add")'>Tạo mới</a></li>
+                                        <li><a href='@Url.Content("~/admincp/content/listtemp")'>Bài viết của tôi</a></li>
+                                        <li><a href='@Url.Content("~/admincp/content/listdelay")'>Danh sách chờ duyệt</a></li>
+                                        @if (intRole == 1)
+                                        {
+                                            <li><a href='@Url.Content("~/admincp/content/listactive")'>Danh sách đã đăng</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href='@Url.Content("~/admincp/GalleryCP/Gallery")'><i class='fa fa-folder'></i> Bộ sưu tập</a>
+                                </li>
+                                @if (intRole == 1)
+                                {
+                                    <li>
+                                        <a><i class='fa fa-folder'></i> Quản trị<span class='fa fa-chevron-down'></span></a>
+                                        <ul class='nav child_menu' style='display: none'>
+                                            <li><a href='@Url.Content("~/admincp/ManageUsers")'>Danh sách user </a></li>
+                                            <li><a href='@Url.Content("~/admincp/AboutMe/GetAboutMe")'>Profile </a></li>
+                                            <li><a href='@Url.Content("~/admincp/ConfigWeb")'>Cấu hình web</a></li>
+                                            <li><a href='@Url.Content("~/admincp/SiteMap")'>Tạo sitemap</a></li>
+                                        </ul>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <nav class="nav navbar-nav">
+                        <ul class=" navbar-right">
+                            <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
+                                    id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="/images/user.jpg" alt="">
+                                </a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right"
+                                    aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/thay-doi-mat-khau">
+                                        <i class="fa fa-info-circle pull-right"></i>
+                                        Thay đổi mật khẩu
+                                    </a>
+                                    <a asp-area="" asp-action="Logout" asp-controller="MyAccount" method="post"
+                                        class="dropdown-item">
+                                        <i class="fa fa-sign-out pull-right"></i> Thoát
+                                    </a>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="right_col" role="main">
+                @RenderBody()
+            </div>
+            <footer>
+                <div class="pull-right">
+                    AdminCP Túi Khôn Muôn Đời - @DateTime.Now.Year - Version 1.0
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+        </div>
+    </div>
+
+    <environment names="Development">
+        <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="/js/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="/js/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+        <script src="/js/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+        <script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script src="/js/bootbox.min.js" type="text/javascript"></script>
+        <script src="/js/jsContent.js" type="text/javascript"></script>
+        <script src="/js/custom.js" type="text/javascript"></script>
+    </environment>
+    <environment names="Product">
+        <script src="/js/sitecp.min.js" type="text/javascript"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+
+
+</html>

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<kol01_hoangthuylinh.Models.tblZone>
+@using kol01_hoangthuylinh.Helpers
+@{
+    string url = Constants.urlHost;
+}
+
+@foreach (var item in Model)
+{
+    string strLink = url + myCommon.FriendlyUrl(item.ZoneName) + "-" + item.Id + "c";
+    <a href="@strLink" title="@item.ZoneName" class="badge">@item.ZoneName</a>
+}

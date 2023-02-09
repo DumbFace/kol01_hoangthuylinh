@@ -1,0 +1,37 @@
+﻿
+@using cloudscribe.Web.Pagination
+@using cloudscribe.Pagination.Models
+@using kol01_hoangthuylinh.Models
+@using kol01_hoangthuylinh.Helpers
+@model PagedResult<tblGallery>
+@{
+    string url = Constants.urlHost;
+}
+
+
+<div class="gallery-category margin-top-content">
+    <div class="section section-gallery">
+        <div class="container mb-4" id="dvList">
+
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadData();
+        });
+
+        function LoadData() {
+            $.ajax({
+                url: "@Url.Action("GetList", "Gallery")",
+                type: "POST",
+                success: function (msg) {
+                    $("#dvList").html(msg);
+                }
+            })
+        }
+    </script>
+}
